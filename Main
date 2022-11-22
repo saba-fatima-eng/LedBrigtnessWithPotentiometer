@@ -1,0 +1,17 @@
+############################## Code to control brigtness of an Led with Potentiometer##########################
+########### remember that connecting the Positive end of LED wit Digital pins wit (~) sign will show varying intensity very clearly ###########
+#define LED_PIN 10
+#define POTENTIOMETER_PIN A1
+
+void setup()
+{
+  pinMode(LED_PIN, OUTPUT);
+}
+
+void loop()
+{
+  #getting the varying value of potentiometer after turning its knob
+  int potentiometerValue = analogRead(POTENTIOMETER_PIN);
+  #using the input brigtness vaue from potnetiometer for led as output intensity 
+  analogWrite(LED_PIN, potentiometerValue/4);
+}
